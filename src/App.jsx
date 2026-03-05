@@ -15,7 +15,28 @@ const ContactPage = lazy(() => import('./pages/ContactPage'))
 const FaqPage = lazy(() => import('./pages/FaqPage'))
 const PrivacyPage = lazy(() => import('./pages/PrivacyPage'))
 
+// Fallback: töltés közben tartja a lapmagasságot, footer nem ugrik fel
 const Fallback = () => <div style={{ minHeight: '100vh' }} />
+
+// App indulása után idle időben prefetcheli az összes chunk-ot
+// → első navigáció is azonnal tölt frissítés után
+const prefetchAllRoutes = () => {
+  import('./pages/HiemtPage')
+  import('./pages/IntimpadPage')
+  import('./pages/WienerPage')
+  import('./pages/PricingPage')
+  import('./pages/ContactPage')
+  import('./pages/FaqPage')
+  import('./pages/PrivacyPage')
+}
+
+if (typeof window !== 'undefined') {
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(prefetchAllRoutes, { timeout: 2000 })
+  } else {
+    setTimeout(prefetchAllRoutes, 1500)
+  }
+}
 
 const router = createBrowserRouter([
   {
