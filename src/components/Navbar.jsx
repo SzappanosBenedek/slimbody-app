@@ -28,6 +28,24 @@ export default function Navbar() {
         { name: 'GYIK', path: '/gyik' },
     ]
 
+    // Menü nyitva → body scroll zárolása (tartalom nem tekerhető át)
+    useEffect(() => {
+        if (isOpen) {
+            document.body.style.overflow = 'hidden'
+            document.body.style.position = 'fixed'
+            document.body.style.width = '100%'
+        } else {
+            document.body.style.overflow = ''
+            document.body.style.position = ''
+            document.body.style.width = ''
+        }
+        return () => {
+            document.body.style.overflow = ''
+            document.body.style.position = ''
+            document.body.style.width = ''
+        }
+    }, [isOpen])
+
     // Ha az útvonal megváltozott → menü bezárása
     useEffect(() => {
         setIsOpen(false)
@@ -105,8 +123,8 @@ export default function Navbar() {
                         animate={{ x: 0 }}
                         exit={{ x: '100%' }}
                         transition={{ type: 'tween', duration: 0.15, ease: 'easeOut' }}
-                        className="fixed inset-0 bg-slate-900 z-[60] lg:hidden flex flex-col"
-                        style={{ willChange: 'transform' }}
+                        className="fixed inset-x-0 top-0 bg-slate-900 z-[60] lg:hidden flex flex-col"
+                        style={{ willChange: 'transform', height: '100dvh', overscrollBehavior: 'contain' }}
                     >
                         <div className="flex items-center justify-between px-6 py-4 border-b border-slate-800 shrink-0 bg-slate-900">
                             <button
