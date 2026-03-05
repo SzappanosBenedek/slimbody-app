@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useLayoutEffect } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
 import Navbar from './Navbar'
 import Footer from './Footer'
@@ -6,8 +6,9 @@ import FloatingCTA from './FloatingCTA'
 
 function ScrollToTop() {
     const { pathname } = useLocation()
-    useEffect(() => {
-        window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
+    // useLayoutEffect: festés ELŐTT fut szinkronban → nincs scroll villanás
+    useLayoutEffect(() => {
+        window.scrollTo(0, 0)
     }, [pathname])
     return null
 }
