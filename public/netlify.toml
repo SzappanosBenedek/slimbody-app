@@ -1,0 +1,29 @@
+# Netlify konfiguráció
+
+# Favicon cache busting – böngészők ne cache-eljék sokáig
+[[headers]]
+  for = "/favicon*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, must-revalidate"
+
+[[headers]]
+  for = "/apple-touch-icon*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, must-revalidate"
+
+[[headers]]
+  for = "/icon-*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, must-revalidate"
+
+# Statikus assetekre hosszú cache
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# HTML fájlok – mindig frissek legyenek
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "no-cache, must-revalidate"

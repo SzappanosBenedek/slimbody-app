@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="hu">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Theme color (SlimBody brand: #D4A373) -->
+  <meta name="theme-color" content="#D4A373" />
+
+  <!-- Google Site Verification (cseréld ki a valódi kódra) -->
+  <!-- <meta name="google-site-verification" content="IDE_IRD_BE_A_VERIFIKÁCIÓS_KÓD" /> -->
+
+  <!-- Favicon – ICO első (max browser kompatibilitás) -->
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+  <!-- Canonical fallback (React Helmet felülírja oldalanként) -->
+  <link rel="canonical" href="https://slimbodyszentendre.hu/" />
+
+  <!-- Hreflang -->
+  <link rel="alternate" hrefLang="hu" href="https://slimbodyszentendre.hu/" />
+  <link rel="alternate" hrefLang="hu-HU" href="https://slimbodyszentendre.hu/" />
+
+  <!-- DNS Prefetch & Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+
+  <!-- Hero kép preload (LCP gyorsítás) -->
+  <link rel="preload" as="image" href="/images/heroimage.webp" fetchpriority="high" />
+  <!-- Kezelések első kép preload (fast scroll fix) -->
+  <link rel="preload" as="image" href="/images/hiemtgep1.webp" />
+  <link rel="preload" as="image" href="/images/intimpad.webp" />
+  <link rel="preload" as="image" href="/images/wienertesttekercseles.webp" />
+
+  <!-- Google Fonts – non-blocking (media=print trick) -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet">
+  </noscript>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined&display=swap" rel="stylesheet"
+    media="print" onload="this.media='all'" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap" rel="stylesheet" media="print"
+    onload="this.media='all'" />
+
+  <!-- Fallback OG/Twitter tagek (React Helmet felülírja oldalanként) -->
+  <meta property="og:site_name" content="SlimBody Szentendre" />
+  <meta property="og:locale" content="hu_HU" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://slimbodyszentendre.hu/images/heroimage.webp" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <meta name="robots" content="index, follow" />
+  <title>Alakformálás Szentendrén | HIEMT & Testtekercselés | SlimBody</title>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-200 antialiased pt-0 m-0">
+  <div id="root" class="min-h-screen"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
+</html>
